@@ -35,7 +35,7 @@ struct Wine : Hashable{
     let grapeVarities: Set<GrapeVarities>
     let medal: Optional<Medal>
     
-    var note: Double = 10.0
+    var rating: Double = 10.0
     var comment: String?
     
     static var capacity: Double = 75.0

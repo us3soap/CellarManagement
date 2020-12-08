@@ -31,15 +31,21 @@ class ViewController: UIViewController {
     
     @IBAction func save(_ sender: UIButton) {
         
-        /*if let name = nameTextField.text,
+        if let name = nameTextField.text,
            let castleName = castleNameTextField.text,
            let castleDepartement = castleDepartementTextField.text,
+           let castleDepartementInt = Int(castleDepartement),
            let year = yearTextField.text,
+           let yearInt = Int(year),
            let price = priceTextField.text,
+           let priceDouble = Double(price),
            let comment = commentTextField.text {
             
+            let wine = Wine(name: name, castle: Castle(name: castleName, department: castleDepartementInt), year: yearInt, isOrganic: isOrganicSwitch.isOn, price: priceDouble, urlImage: nil, grapeVarities: [], medal: nil,rating: 10.0, comment: comment)
             
-        }*/
+            print(wine.description())
+            
+        }
         
 
     }
