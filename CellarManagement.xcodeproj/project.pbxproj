@@ -16,6 +16,7 @@
 		7F0AB19F257FC00A00D48DA9 /* Wine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0AB19E257FC00A00D48DA9 /* Wine.swift */; };
 		7F0AB1A2257FC02400D48DA9 /* Castle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0AB1A1257FC02400D48DA9 /* Castle.swift */; };
 		7F0AB1A5257FC06400D48DA9 /* Cellar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0AB1A4257FC06400D48DA9 /* Cellar.swift */; };
+		7F6B76C7257FD67000777341 /* UITextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6B76C6257FD67000777341 /* UITextField+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		7F0AB19E257FC00A00D48DA9 /* Wine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wine.swift; sourceTree = "<group>"; };
 		7F0AB1A1257FC02400D48DA9 /* Castle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Castle.swift; sourceTree = "<group>"; };
 		7F0AB1A4257FC06400D48DA9 /* Cellar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cellar.swift; sourceTree = "<group>"; };
+		7F6B76C6257FD67000777341 /* UITextField+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 				7F0AB194257F9C6200D48DA9 /* LaunchScreen.storyboard */,
 				7F0AB197257F9C6200D48DA9 /* Info.plist */,
 				7F0AB1A7257FC07E00D48DA9 /* model */,
+				7F6B76C6257FD67000777341 /* UITextField+Extensions.swift */,
 			);
 			path = CellarManagement;
 			sourceTree = "<group>";
@@ -154,6 +157,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F6B76C7257FD67000777341 /* UITextField+Extensions.swift in Sources */,
 				7F0AB19F257FC00A00D48DA9 /* Wine.swift in Sources */,
 				7F0AB18E257F9C5F00D48DA9 /* ViewController.swift in Sources */,
 				7F0AB1A5257FC06400D48DA9 /* Cellar.swift in Sources */,

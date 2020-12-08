@@ -35,19 +35,18 @@ class ViewController: UIViewController {
         
         guard let castleName = castleNameTextField.text, !name.isEmpty else { return }
        
-        guard let castleDepartementString = castleDepartementTextField.text, let castleDepartement = Int( castleDepartementString) else { return }
+        guard let castleDepartement = castleDepartementTextField.intValue else { return }
         
-        guard let yearString = yearTextField.text, let year = Int(yearString) else { return }
+        guard let year = yearTextField.intValue else { return }
         
-        guard let priceString = priceTextField.text, let price = Double(priceString) else { return }
+        guard let price = priceTextField.doubleValue else { return }
         
         guard let comment = commentTextField.text else { return }
         
-        let wine = Wine(name: name, castle: Castle(name: castleName, department: castleDepartement), year: year, isOrganic: isOrganicSwitch.isOn, price: price, urlImage: nil, grapeVarities: [], medal: nil,rating: 10.0, comment: comment)
+        let wine = Wine(name: name, castle: Castle(name: castleName, department: castleDepartement), year: year, isOrganic: isOrganicSwitch.isOn, price: price, urlImage: nil, grapeVarities: [], medal: nil, rating: 10.0, comment: comment)
         
         print(wine.description())
 
     }
     
 }
-
