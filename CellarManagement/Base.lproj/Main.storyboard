@@ -16,8 +16,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hup-BG-EOq">
+                                <rect key="frame" x="16" y="407" width="358" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="save:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fJo-26-mDG"/>
+                                </connections>
+                            </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="zyf-Go-smx" userLabel="FormStack">
-                                <rect key="frame" x="16" y="60" width="358" height="744.66666666666663"/>
+                                <rect key="frame" x="16" y="60" width="358" height="688.66666666666663"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="GC4-NZ-lLo" userLabel="WineFormStack">
                                         <rect key="frame" x="0.0" y="0.0" width="358" height="143.33333333333334"/>
@@ -234,13 +242,6 @@
                                             <constraint firstAttribute="trailing" secondItem="yKC-5i-SgD" secondAttribute="trailing" id="z29-nK-J9x"/>
                                         </constraints>
                                     </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hup-BG-EOq">
-                                        <rect key="frame" x="0.0" y="714.66666666666663" width="358" height="30"/>
-                                        <state key="normal" title="Save"/>
-                                        <connections>
-                                            <action selector="save:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fJo-26-mDG"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                             </stackView>
                         </subviews>
