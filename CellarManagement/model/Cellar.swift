@@ -45,4 +45,11 @@ class Cellar {
         }
     }
     
+    // Closure based
+    func sortedWines() -> [Wine] {
+        return wines.sorted { (w1, w2) -> Bool in
+            return w1.name < w2.name
+        }
+    }
+    
 }
