@@ -12,7 +12,7 @@ class Cellar {
     var wines: Set<Wine>
     
     init(initialWines: Set<Wine> = []){
-        wines = initialWines
+        self.wines = initialWines
     }
         
             //ext   int

@@ -18,6 +18,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var medalSegmented: UISegmentedControl!
     @IBOutlet weak var ratingSegmented: UISegmentedControl!
     @IBOutlet weak var commentTextField: UITextField!
+    @IBOutlet weak var grapeVaritiesTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +31,9 @@ class ViewController: UIViewController {
         medalSegmented.removeAllSegments()
         for medal in allCases{
             medalSegmented.insertSegment(withTitle: medal.icon, at: medalSegmented.numberOfSegments, animated: true)
-        }        
+        }
+        
+        grapeVaritiesTableView.dataSource = self
     }
 
     @IBAction func chooseImage(_ sender: UIButton) {
@@ -54,6 +57,23 @@ class ViewController: UIViewController {
         
         print(wine.description())
 
+    }
+    
+}
+
+extension ViewController: UITableViewDataSource{
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return GrapeVarities.allCases.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "grapeVarityAddCell", for: indexPath)
+            
+        cell.textLabel?.text = GrapeVarities.init(rawValue: indexPath.row)?.label
+        
+        return cell
     }
     
 }
