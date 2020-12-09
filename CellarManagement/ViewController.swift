@@ -19,10 +19,18 @@ class ViewController: UIViewController {
     @IBOutlet weak var ratingSegmented: UISegmentedControl!
     @IBOutlet weak var commentTextField: UITextField!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        configureUI()
+    }
+    
+    func configureUI(){
+        let allCases = Wine.Medal.allCases
+        medalSegmented.removeAllSegments()
+        for medal in allCases{
+            medalSegmented.insertSegment(withTitle: medal.icon, at: medalSegmented.numberOfSegments, animated: true)
+        }        
     }
 
     @IBAction func chooseImage(_ sender: UIButton) {
@@ -42,8 +50,11 @@ class ViewController: UIViewController {
         guard let price = priceTextField.doubleValue else { return }
         
         guard let comment = commentTextField.text else { return }
+                
+        guard let medal = Wine.Medal.init(rawValue: medalSegmented.selectedSegmentIndex) else { return }
+        print(medal)
         
-        let wine = Wine(name: name, castle: Castle(name: castleName, department: castleDepartement), year: year, isOrganic: isOrganicSwitch.isOn, price: price, urlImage: nil, grapeVarities: [], medal: nil, rating: 10.0, comment: comment)
+        let wine = Wine(name: name, castle: Castle(name: castleName, department: castleDepartement), year: year, isOrganic: isOrganicSwitch.isOn, price: price, urlImage: nil, grapeVarities: [], medal: medal, rating: 10.0, comment: comment)
         
         print(wine.description())
 

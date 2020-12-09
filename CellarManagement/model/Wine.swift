@@ -11,20 +11,19 @@ enum GrapeVarities {
     case grenache, mouvedre, syrah, carignan
 }
 
-enum Medal {
-    case GOLD, SILVER, BRONZE
-    
-    var icon : String {
-      switch self {
-      case .GOLD: return "🥇"
-      case .SILVER: return "🥈"
-      case .BRONZE: return "🥉"
-      }
-    }
-}
-
-
 struct Wine : Hashable{
+    
+    enum Medal: Int, CaseIterable {
+        case GOLD, SILVER, BRONZE
+        
+        var icon : String {
+          switch self {
+          case .GOLD: return "🥇"
+          case .SILVER: return "🥈"
+          case .BRONZE: return "🥉"
+          }
+        }
+    }
 
     let name: String
     let castle: Castle
@@ -33,7 +32,7 @@ struct Wine : Hashable{
     let price: Double
     let urlImage: URL?
     let grapeVarities: Set<GrapeVarities>
-    let medal: Optional<Medal>
+    let medal: Optional<Wine.Medal>
     
     var rating: Double = 10.0
     var comment: String?
