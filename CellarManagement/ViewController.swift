@@ -20,6 +20,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var commentTextField: UITextField!
     @IBOutlet weak var grapeVaritiesTableView: UITableView!
     
+    var currentCellar : Cellar?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -52,11 +54,12 @@ class ViewController: UIViewController {
               let comment = commentTextField.text
         else { return }
         
+        currentCellar?.add( Wine(name: name, castle: Castle(name: castleName, department: castleDepartement), year: year, isOrganic: isOrganicSwitch.isOn, price: price, urlImage: nil, grapeVarities: [], medal: Wine.Medal.init(rawValue: medalSegmented.selectedSegmentIndex), rating: 10.0, comment: comment))
         
-        let wine = Wine(name: name, castle: Castle(name: castleName, department: castleDepartement), year: year, isOrganic: isOrganicSwitch.isOn, price: price, urlImage: nil, grapeVarities: [], medal: Wine.Medal.init(rawValue: medalSegmented.selectedSegmentIndex), rating: 10.0, comment: comment)
+        print(currentCellar?.wines.count ?? "Empty")
         
-        print(wine.description())
-
+        dismiss(animated: true, completion: nil)
+    
     }
     
 }

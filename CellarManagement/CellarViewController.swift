@@ -19,19 +19,36 @@ class CellarViewController: UIViewController {
         super.viewDidLoad()
         
         winesTableView.dataSource = self
-        // Do any additional setup after loading the view.
+       
+        let notifCenter = NotificationCenter.default
+        notifCenter.addObserver(forName: Notification.Name(rawValue: "CellarUpdated"), object: cellar, queue: OperationQueue.main) { (notif) in
+            self.winesTableView.reloadData()
+        }
     }
     
-
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        if(segue.identifier == "showDetails"){
+            let destination = segue.destination as? WineController
+            
+            guard let indexPath = winesTableView.indexPathForSelectedRow else { return }
+            
+            let selectedWine = cellar.sortedWines()[indexPath.row]
+            
+            destination?.currentWine = selectedWine
+        } else if (segue.identifier == "showForm"){
+            let destination = segue.destination as? ViewController
+            print(cellar.wines.count)
+            destination?.currentCellar = cellar
+            
+        }
     }
-    */
+    
 
 }
 

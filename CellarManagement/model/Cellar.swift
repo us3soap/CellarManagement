@@ -21,13 +21,20 @@ class Cellar {
         
         if result.inserted{
             print("➕ " + wine.name + " is added");
+            notify()
         }
     }
     
     func remove(_ wine: Wine) {
         if let wineRemoved = wines.remove(wine) {
             print("🗑 " + wineRemoved.name + " is removed");
+            notify()
         }
+    }
+    
+    func notify() {
+        let notifCenter = NotificationCenter.default
+        notifCenter.post(name: Notification.Name(rawValue: "CellarUpdated"), object: self)
     }
     
     func showWines(){
